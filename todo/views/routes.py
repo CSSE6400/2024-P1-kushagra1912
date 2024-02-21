@@ -33,7 +33,7 @@ def get_todo(id):
 @api.route('/todos', methods=["POST"])
 def create_todo():
     return jsonify([{
-        "id" : id,
+        "id" : 1,
         "title": "Watch CSSE6400 Lecture",
         "description": "Watch the CSSE6400 lecture on ECHO360 for week 1",
         "completed": True,
@@ -42,7 +42,7 @@ def create_todo():
         "updated_at": "2023-02-20T00:00:00"
     },201])
 
-@api.route('/todos/<id:int>', methods=["PUT"])
+@api.route('/todos/<int:id>', methods=["PUT"])
 def update_todo(id):
     return jsonify([{
         "id" : id,
@@ -54,8 +54,8 @@ def update_todo(id):
         "updated_at": "2023-02-20T00:00:00"
     }])
 
-@api.route('/todos/<id:int>', methods=["DELETE"])
-def update_todo(id):
+@api.route('/todos/<int:id>', methods=["DELETE"])
+def delete_todo(id):
     return jsonify([{
         "id" : id,
         "title": "Watch CSSE6400 Lecture",
